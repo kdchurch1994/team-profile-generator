@@ -23,7 +23,12 @@ test('Gets the Employee ID', () => {
     const employee = new Employee('Kyle', 1, 'kdchurch@bsu.edu');
 
     expect(employee.getID()).toEqual(expect.any(Number));
-})
+});
 
+//Testing the getEmail() function that should return the email address of the Employee that is entered into the prompt. 
+test('Gets the Employee email address', () => {
+    const employee = new Employee('Kyle', 1, 'kdchurch@bsu.edu');
 
+    expect(employee.getEmail()).toEqual(expect.any(String));
+});
 
