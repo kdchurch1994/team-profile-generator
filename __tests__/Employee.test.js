@@ -32,3 +32,9 @@ test('Gets the Employee email address', () => {
     expect(employee.getEmail()).toEqual(expect.any(String));
 });
 
+//Testing the getRole() function that should return "Employee" as the role
+test('Gets the role of the Employee', () => {
+    const employee = new Employee('Kyle', 1, 'kdchurch@bsu.edu');
+
+    expect(employee.getRole()).toEqual("Employee");
+});
