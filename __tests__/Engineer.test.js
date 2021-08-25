@@ -1,5 +1,5 @@
 const { test } = require('@jest/globals');
-const Engineer = require('./Engineer');
+const Engineer = require('../lib/Engineer');
 
 //Test that checks if the new engineer object is created successfully based on the Employee and Engineer constructors
 test('Creates Engineer object', () => {
