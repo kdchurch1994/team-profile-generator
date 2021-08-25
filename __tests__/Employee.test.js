@@ -1,5 +1,4 @@
 //allows us to refer to Employee.js to test if the Employee constructor is working properly
-const { test, expect } = require('@jest/globals');
 const Employee = require('../lib/Employee');
 
 //The first test will determine if a new employee object is working by referring to the employee class constructor
