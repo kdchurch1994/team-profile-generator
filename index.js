@@ -194,9 +194,9 @@ const employeeAdd = () => {
                 return groupArray;
             }
         })
+        
 };
 
-employeeAdd();
-
-//managerAdd();
+managerAdd()
+    .then(employeeAdd);
 
