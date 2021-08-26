@@ -187,7 +187,7 @@ const employeeAdd = () => {
 
             groupArray.push(employee);
 
-            //If statement that will restart the inqurier prompt if the user selects to add additional employees. If the user selects no, the groupArray is returned
+            //If statement that will restart the inqurier prompt if the user selects to add additional employees. If the user selects no, the last employee added to the array is returned to the console.log
             if (addEmployeeConfirm) {
                 return employeeAdd(groupArray);
             } else {
