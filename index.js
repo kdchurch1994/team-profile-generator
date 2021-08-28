@@ -4,6 +4,9 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
+//Imports the GenerateHTML.js page
+const GenerateHTML = require('./src/GenerateHTML');
+
 //imports required node modules inqurier and fs
 const fs = require('fs');
 const inquirer = require('inquirer');
@@ -197,6 +200,28 @@ const employeeAdd = () => {
         
 };
 
+//Function that writes to the file index.html stored in the dist directory. 
+//This file will be generated based off of the data in the GenerateHTML.js file
+const writeFile = data => {
+    fs.writeFile('./dist/index.html', data, err => {
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log("Your team profile has been created successfully.")
+        }
+    })
+}
+
 managerAdd()
-    .then(employeeAdd);
+    .then(employeeAdd)
+    .then(groupArray => {
+        return GenerateHTML(groupArray);
+    })
+    .then(htmlPage => {
+        return writeFile(htmlPage);
+    })
+    .catch(err => {
+        console.log(err);
+    });
 
