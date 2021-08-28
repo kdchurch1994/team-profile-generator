@@ -1,18 +1,19 @@
 //Function that is used to generate the HTML that will use the information entered into the prompt by the user when asked to add a manager
 const managerGenerate = function (manager) {//Materialize is being used to create an icon that will be displayed after the name of the manager is displayed
     return `
-    <div class ="col-4">
+    <div class ="col-4 mt-4">
         <div class="card">
-            <div class="header-card">
-                <h2>${manager.managerName}</h2>
-                <h3>Manager</h3><i class="material-icons">content_paste</i>
+            <div class="header-card bg-primary text-white rounded">
+                <h4>${manager.name}</h2>
+                <h5>Manager</h3><i class="material-icons">coffee</i>
             </div>
 
-            <div class="body-card">
-                <p class="employee-ID">ID: ${manager.employeeID}</p>
-                <p class="employee-email>Email: <a href="mailto:${manager.employeeEmail}">${manager.employeeEmail}</a></p>
-                <p class="manager-office>Office Number: ${manager.officeNumber}</p>
+            <div class="body-card rounded">
+                <p class="employee-ID">ID: ${manager.id}</p>
+                <p class="employee-email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                <p class="manager-office">Office Number: ${manager.officeNumber}</p>
             </div>
+
         </div>
     </div>
     `;
@@ -21,38 +22,40 @@ const managerGenerate = function (manager) {//Materialize is being used to creat
 //Function that is used to generate the HTML that will use the information entered into the prompt by the user when asked to add a new employee and an intern is selected
 const internGenerate = function (intern) {//Materialize is being used to create an icon that will be displayed after the name of the intern is displayed
     return `
-    div class="col-4"
+    <div class="col-4 mt-4">
         <div class="card">
-            <div class="header-card">
-                <h2>${intern.employeeName}</h2>
-                <h3>Intern</h3><i class="material-icons">assignment_ind</i>
+            <div class="header-card bg-primary text-white rounded">
+                <h4>${intern.name}</h2>
+                <h5>Manager</h3><i class="material-icons">work</i>
             </div>
 
-            <div class="body-card">
-                <p class="employee-ID">ID: ${intern.employeeID}</p>
-                <p class="employee-email">Email: <a href="mailto:${intern.employeeEmail}">${intern.employeeEmail}</a></p>
-                <p class="intern-school">School: ${intern.internSchool}</p>
+            <div class="body-card rounded">
+                <p class="employee-ID">ID: ${intern.id}</p>
+                <p class="employee-email">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+                <p class="intern-school">Office Number: ${intern.school}</p>
             </div>
+
         </div>
-    </div>    
+    </div>
     `;
 }
 
 //Function that is used to generate the HTML that will use the information entered into the prompt by the user when asked to add a new employee and an engineer is selcted
 const engineerGenerate = function (engineer) {//Materialize is being used to create an icon that will be displayed after the name of the engineer is displayed
     return `
-    <div class="col-4">
-        div class="card">
-            <div class="header-card">
-                </h2>${engineer.employeeName}</h2>
-                <h3>Engineer</h3><i class="material-icons">laptop_mac</i>
+    <div class="col-4 mt-4">
+        <div class="card">
+            <div class="header-card bg-primary text-white rounded">
+                <h4>${engineer.name}</h2>
+                <h5>Engineer</h3><i class="material-icons">laptop</i>
             </div>
 
-            <div class="body-card">
-                <p class="employee-ID">ID: ${engineer.employeeID}</p>
-                <p class="employee-email">Email: <a href="mailto:${engineer.employeeEmail}">${engineer.employeeEmail}</a></p>
-                <p class="engineer-github">GitHub Username: <a href="https://github.com/${engineer.engineerGithub}</a></p>
+            <div class="body-card rounded">
+                <p class="employee-ID">ID: ${engineer.id}</p>
+                <p class="employee-email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+                <p class="engineer-github">GitHub Username: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
             </div>
+
         </div>
     <div>    
     `;
@@ -97,27 +100,26 @@ const teamGeneratePage = function (cardsEmployee) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Project Team Profile</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-aswesome/5.11.2/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> <!-- Allows us to use bootstrap for our styling-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <header class="container-fluid bg-dark">
-            <h1 class="continer-fluid text-center text-white">Project Team Profile</h1>
-        <header>
+        <header class="container-fluid bg-primary">
+            <h1 class="container-fluid text-center text-white">Project Team Profile</h1>
+        </header>
 
         <main>
-            <div class="container">
+            <div class="container-fluid" id="card-container">
                 <div class="row justify-content-center">
                     ${cardsEmployee}
                 </div>
             </div>
         </main>
     </body>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>   
     </html>
     
 `;

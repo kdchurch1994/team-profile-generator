@@ -46,7 +46,7 @@ const managerAdd = () => {
         { //Prompts the user to enter the email address of the manager. It must be a valid email address i.e "kdchurch123@gmail.com"
             type: 'input',
             name: 'employeeEmail',
-            message: "Please enter the email of the manager of this project.",
+            message: "Please enter the email of the manager of this project. (Required)",
             validate: inputEmail => { //Validate is being used to check if a valid email address was entered. The special characters below are being used to determine if the proper format for email is being used. These special characters could be considered regex values, which are regular expressions, which provide patterns for searching, validating, and manipulatating data
                 validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(inputEmail);
                 if (validEmail) { //If the email is valid, the data is accepted. If the email is not valid, the user will be asked to enter the email address again. 
@@ -175,7 +175,7 @@ const employeeAdd = () => {
         }
     ])
         .then(employeeInput => { //The .then promise is being used to take this data, create the const employeeInput and then uses this data to create the new employee by using the Intern or Engineer constructors depending on what role was selected
-            let {employeeRole, employeeName, employeeID, employeeEmail, internSchool, engineerGithub, addEmployeeConfirm} = employeeInput
+            let {employeeName, employeeID, employeeEmail, employeeRole, internSchool, engineerGithub, addEmployeeConfirm} = employeeInput
             let employee; //sets employee to an empty value
 
             if (employeeRole === "Intern") { //If the Intern role was selected during the inquirer prompt, the employee variable is set to new Intern, which will use the Intern constructor from Intern.js to create a new Intern. 
