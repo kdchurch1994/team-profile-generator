@@ -25,7 +25,7 @@
   Kyle Church
   
   ## Link to Video
-  Readme Generator Walkthrough: 
+  Readme Generator Walkthrough: https://youtu.be/xNlG76m0K7I
 
   ## Licenses
   
